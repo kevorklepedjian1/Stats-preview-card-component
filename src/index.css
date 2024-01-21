@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+}
+
+.stats {
+  font-family: "Lexend Deca", sans-serif;
+}
+
+:root {
+  --main-bg: hsl(233, 47%, 7%);
+  --card-bg: hsl(244, 38%, 16%);
+  --accent: hsl(277, 64%, 61%);
+  --main-pg: hsla(0, 0%, 100%, 0.75);
+  --stats-hd: hsla(0, 0%, 100%, 0.6);
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--main-bg);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 70%;
+  max-width: 800px;
+  margin: 2rem;
+  background: var(--card-bg);
+  border-radius: 7px;
+  display: flex;
+  overflow: hidden;
+}
+
+.card .desc {
+  padding: 4rem;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.card .desc h1 {
+  font-size: 2rem;
+}
+
+.card .desc h1 span {
+  font-size: 2rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.card .desc p {
+  color: var(--main-pg);
+  margin: 1.5rem 0 3rem 0;
+}
+
+.card .stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.card .stats .number {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.card .stats .name {
+  text-transform: uppercase;
+  color: var(--stats-hd);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.card .card-img {
+  border-radius: 0 7px 7px 0;
+  width: 50%;
+  background: linear-gradient(
+      0deg,
+      hsla(277, 64%, 61%, 0.5) 0%,
+      hsla(277, 64%, 61%, 0.5) 100%
+    ),
+    url('./images/image-header-desktop.jpg') center no-repeat;
+  background-size: cover;
+}
+
+/* Responsive*/
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    width: 90%;
+  }
+  .card .desc {
+    width: 100%;
+    padding: 2rem;
+  }
+  .card .stats {
+    margin-top: 1rem;
+  }
+  .card .stats .companies,
+  .card .stats .templates {
+    margin-bottom: 1rem;
+  }
+  .card .card-img {
+    border-radius: 7px;
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
+    background: linear-gradient(
+        0deg,
+        hsla(277, 64%, 61%, 0.5) 0%,
+        hsla(277, 64%, 61%, 0.5) 100%
+      ),
+      url('./images/image-header-mobile.jpg') center no-repeat;
+    background-size: cover;
+  }
+}
